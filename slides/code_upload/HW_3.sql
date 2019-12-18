@@ -5,6 +5,7 @@ SELECT stu.stu_name AS 学生姓名, MIN(grade) AS 最低分 FROM stu CROSS JOIN
 -- 这个查询的问题在于要求学生不重名
 SELECT stu.stu_name AS 学生姓名, AVG(grade) AS 平均分 FROM stu,enroll,course WHERE stu.stu_id = enroll.stu_id AND course.course_id = enroll.course_id AND course_name LIKE '%数据%' GROUP BY stu.stu_name HAVING 平均分 >= ALL(SELECT AVG(grade) FROM enroll CROSS JOIN course ON course.course_id = enroll.course_id WHERE course_name LIKE '%数据%' GROUP BY stu_id);
 
--- 下面这个是完整的语句，但是MySQL版本问题，不支持WITH 语句
--- 先用WITH语句创建一个临时表table1（查询完后自动删除），然后联接table1和stu查询出姓名
--- WITH table1 AS (SELECT stu.stu_id AS 学号, AVG(grade) AS 平均分 FROM stu,enroll,course WHERE stu.stu_id = enroll.stu_id AND course.course_id = enroll.course_id AND course_name LIKE '%数据%' GROUP BY stu.stu_id HAVING 平均分 >= ALL(SELECT AVG(grade) FROM enroll CROSS JOIN course ON course.course_id = enroll.course_id WHERE course_name LIKE '%数据%' GROUP BY stu_id) SELECT stu.stu_name AS 学生姓名, 平均分 FROM stu JOIN table1 ON stu.stu_id = table1.学号;
+-- 下面这个是完整的语句
+-- 先创建一个临时表s1（查询完后自动删除），然后联接s1和stu查询出姓名
+-- 可以在FROM子句中直接创建临时表，比如select * from (select * from stu) s1;这里s1就是一个临时表，是由select * from stu这个查询生成的
+-- SELECT stu.stu_name AS 姓名, 平均分 FROM (SELECT stu.stu_id AS 学号, AVG(grade) AS 平均分 FROM stu,enroll,course WHERE stu.stu_id = enroll.stu_id AND course.course_id = enroll.course_id AND course_name LIKE '%数据%' GROUP BY stu.stu_id HAVING 平均分 >= ALL(SELECT AVG(grade) FROM enroll CROSS JOIN course ON course.course_id = enroll.course_id WHERE course_name LIKE '%数据%' GROUP BY stu_id)) s1 JOIN stu on stu.stu_id = s1.学号;
