@@ -13745,6 +13745,429 @@ False
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">c</span>
+
+<span class="c1">#调用函数add</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>7
+8
+9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1">#定义全局变量x</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span> <span class="c1">#声明现在使用的是全局变量</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;未定义局部变量前x=</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="c1">#定义了一个局部变量y</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y=</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;更改局部变量y=</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    
+<span class="n">func</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;全局x=</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>未定义局部变量前x=50
+y=2
+更改局部变量y=30
+全局x=25
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#列表</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;physics&#39;</span><span class="p">,</span> <span class="s1">&#39;chemistry&#39;</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="c1">#序号为1的元素</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1997</span><span class="p">))</span><span class="c1">#找出列表中第一个匹配的位置，不存在就会报错</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1998</span> <span class="ow">in</span> <span class="n">list1</span><span class="p">)</span><span class="c1">#判断1998是否在列表中</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1998</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list1</span><span class="p">)</span><span class="c1">#判断1998是否不在列表中</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span><span class="c1">#序号从1开始到3为止（不包括3）的元素</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="c1">#倒数第一个元素</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span><span class="c1">#倒数第二个元素，以此类推</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">))</span><span class="c1">#list1的长度，即元素数量</span>
+<span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;math&#39;</span><span class="p">)</span><span class="c1">#列表末尾插入&#39;math&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+<span class="n">list1</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2000</span><span class="p">)</span><span class="c1">#在位置1处插入2000</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+<span class="n">list1</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="c1">#删除最后一个元素</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+<span class="n">list1</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="c1">#删除位置为0的元素</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+<span class="c1">#按顺序遍历整个列表</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">#第二种遍历方法，相对来说比较低效</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#字典</span>
+<span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">])</span><span class="c1">#访问key为&#39;a&#39;的元素</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;e&#39;</span> <span class="ow">in</span> <span class="n">dict1</span><span class="p">)</span><span class="c1">#判断dict1是否存在键&#39;e&#39;</span>
+<span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span><span class="c1">#修改key为&#39;a&#39;的元素的值</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;hello&#39;</span><span class="p">]</span><span class="c1">#插入一个元素</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span><span class="c1">#输出结果可以看到，字典的元素排列是无序的</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">del</span> <span class="n">dict1</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="c1">#删除一个元素</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">dict1</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;key:</span><span class="si">{0}</span><span class="s1">,value:</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">dict1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;key:</span><span class="si">{0}</span><span class="s1">,value:</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">dict1</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#系统输入输出</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You entered: &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;大于0&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#文件输入输出</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_in.txt&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="c1">#因为文件中包含中文，所以需要指定编码utf-8</span>
+<span class="n">f_content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="c1">#一次性读入所有的内容</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f_content</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span><span class="c1">#关闭文件，释放占用</span>
+<span class="c1">#一行一行读入</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_in.txt&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="c1">#再次读入文件</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span><span class="c1">#关闭文件，释放占用</span>
+
+<span class="c1">#输出文件</span>
+<span class="n">log_f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_out.log&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">log_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f_content</span><span class="p">)</span>
+<span class="n">log_f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;no_file&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;other code&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-32-aea80d157e0e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>f <span class="ansi-yellow-intense-fg ansi-bold">=</span> open<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;no_file&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">      2</span> print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;other code&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;no_file&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#异常处理</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;no_file&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">SyntaxError</span><span class="p">:</span>
+    <span class="c1">#语法异常则...</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;syntax error&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+    <span class="c1">#如果发生文件输入输出异常，则...</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no such file&#39;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="c1">#不管异常发生与否，最终执行...</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;go on&#39;</span><span class="p">)</span><span class="c1">#继续执行后需命令</span>
+<span class="c1">#注意：except类型可以不指定，finally语句也不是必须存在的</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>no such file
+end
+go on
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#正则表达式</span>
+<span class="kn">import</span> <span class="nn">re</span> <span class="c1">#导入正则匹配库</span>
+
+<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;初步核算，全年国内生产总值900309亿元，比上年增长6.6%。其中，第一产业增加值64734亿元，增长3.5%；第二产业增加值366001亿元，增长5.8%；第三产业增加值469575亿元，增长7.6%。第一产业增加值占国内生产总值的比重为7.2%，第二产业增加值比重为40.7%，第三产业增加值比重为52.2%。&#39;</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;增加值(\d+)亿元.*?增长(\d+\.\d+)%&#39;</span><span class="p">)</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;比重为(\d+.\d+)%&#39;</span><span class="p">)</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result1</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="se">\t</span><span class="si">{1}</span><span class="s1">%</span><span class="se">\t</span><span class="si">{2}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">result1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="n">result2</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>64734	3.5%	7.2%
+366001	5.8%	40.7%
+469575	7.6%	52.2%
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1">#贪婪匹配和非贪婪匹配</span>
+<span class="c1">#找出字符串中介于‘总票房’和‘亿元’之间的内容</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;2020年，哪吒总票房47亿元；战狼总票房507亿元。2020年，哪吒总票房47亿元；战狼总票房507亿元。&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;(\d+)亿元.+?(\d+)亿元&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[(&#39;47&#39;, &#39;507&#39;), (&#39;47&#39;, &#39;507&#39;)]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#正则表达式</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1">#贪婪匹配和非贪婪匹配</span>
+<span class="c1">#找出字符串中介于‘总票房’和‘亿元’之间的内容</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;哪吒总票房47亿元；战狼总票房57亿元。&#39;</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;总票房(.*)亿元&#39;</span><span class="p">)</span><span class="c1">#贪婪匹配,*匹配的字符越多越好</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;总票房(.*?)亿元&#39;</span><span class="p">)</span><span class="c1">#加上问号，表示非贪婪匹配，*匹配的字符越少越好（次数则不限）</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span><span class="c1">#search()返回第一次成功匹配的位置</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">span</span><span class="p">())</span><span class="c1">#再用span()提取具体位置，span返回一个tuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span><span class="c1">#match() 尝试从字符串的起始位置匹配一个模式，如果不是起始位置匹配成功的话，match()就返回none</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;哪吒&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">))</span><span class="c1">#match()的另外一种使用形式</span>
+
+
+<span class="c1">#逻辑或</span>
+<span class="c1">#找出金陵十二钗中所有姓贾、史、王、薛的人物</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">林黛玉，香菱，晴雯</span>
+<span class="s1">薛宝钗，薛宝琴，袭人</span>
+<span class="s1">贾元春，尤三姐，小红</span>
+<span class="s1">贾探春，尤二姐，鸳鸯</span>
+<span class="s1">史湘云，邢岫烟，紫鹃</span>
+<span class="s1">妙玉，李纹，金钏</span>
+<span class="s1">贾迎春，李绮，莺儿</span>
+<span class="s1">贾惜春，宝蟾，司棋</span>
+<span class="s1">王熙凤，宝珠，玉钏</span>
+<span class="s1">贾巧姐，瑞珠，茜雪</span>
+<span class="s1">李纨，平儿，麝月</span>
+<span class="s1">秦可卿，娇杏，柳五儿</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;(贾.{1,2}|史.{1,2}|王.{1,2}|薛.{1,2})&#39;</span><span class="p">)</span><span class="c1">#匹配陈或者李开头、后面跟着1-2个任意字符的字符串，注意：换行符除外</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
 </body>
 
  
