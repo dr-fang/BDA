@@ -13228,7 +13228,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#根据条件删除数据</span>
@@ -13245,7 +13245,7 @@ div#notebook {
                              <span class="p">,</span><span class="s1">&#39;12. Air France&#39;</span><span class="p">,</span> <span class="s1">&#39;&quot;Swiss Air&quot;&#39;</span><span class="p">]})</span>
 <span class="c1">#首先找出符合条件的所有行的index</span>
 <span class="c1">#如下语句返回的是一个list，包含了所有符合条件的行索引</span>
-<span class="n">drop_index</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="n">df1</span><span class="o">.</span><span class="n">RecentDelays</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+<span class="n">drop_index</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="n">df1</span><span class="o">.</span><span class="n">RecentDelays</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
 <span class="c1">#删除数据</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">drop_index</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">df1</span>
@@ -13261,7 +13261,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13295,7 +13295,7 @@ div#notebook {
       <td>1</td>
       <td>MAdrid_miLAN</td>
       <td>NaN</td>
-      <td>-1</td>
+      <td>0</td>
       <td>&lt;Air France&gt; (12)</td>
     </tr>
   </tbody>
