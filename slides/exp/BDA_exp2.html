@@ -13372,6 +13372,50 @@ finish
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">def</span> <span class="nf">read_hist</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">f_text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">balances</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;账户余额为.*?(\d+.*)元&#39;</span><span class="p">,</span><span class="n">f_text</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">balances</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;0&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">balances</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">account_file</span> <span class="o">=</span> <span class="s1">&#39;account.txt&#39;</span>
+<span class="n">balance</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">read_hist</span><span class="p">(</span><span class="n">account_file</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;账户余额为</span><span class="si">{}</span><span class="s1">元&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">balance</span><span class="p">))</span>
+<span class="n">op_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;存款还是取款？输入结束退出操作&quot;</span><span class="p">)</span>
+<span class="n">op</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;(存款|取款)(\d.*\d*)元{0,1}&#39;</span><span class="p">,</span><span class="n">op_input</span><span class="p">)</span>
+<span class="n">ops</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">op</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+    <span class="n">sign</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;存款&#39;</span><span class="p">:</span>
+        <span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;元&quot;</span><span class="p">)</span>
+    <span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span> <span class="o">+</span> <span class="n">sign</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;账户余额为</span><span class="si">{}</span><span class="s1">元&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">balance</span><span class="p">))</span>
+    <span class="n">op_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;存款还是取款？输入结束退出操作&quot;</span><span class="p">)</span>
+    <span class="n">op</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;(存款|取款)(\d.*\d*)元{0,1}&#39;</span><span class="p">,</span><span class="n">op_input</span><span class="p">)</span>
+
+<span class="n">log_f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">account_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">ops</span><span class="p">:</span>
+    <span class="n">log_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">o</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">log_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;账户余额为</span><span class="si">{}</span><span class="s1">元</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">balance</span><span class="p">))</span>
+<span class="n">log_f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;退出系统&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 <div class="output_wrapper">
 <div class="output">
