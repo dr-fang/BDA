@@ -58,10 +58,10 @@
 											<td>4</td><td><a href="slides/3_PythonCrawler.pptx">Python数据获取</a>，<a href="slides/code/BDA_Ch3.html">演示代码</a></td><td><a href="slides/exp/Exp2.html">Python基础2示例代码及作业</a></td>
 										</tr>
 										<tr>
-											<td>5</td><td><a href="slides/4_Database.pptx">数据库基础及应用</a>，<a href=#>SQL演示代码</a></td><td><a href="slides/exp/Exp3.html">网络数据爬取练习</a></td>
+											<td>5</td><td><a href="slides/4_Database.pptx">数据库基础及应用</a>，<a href="slides/code/mysql_code.zip">SQL演示代码</a></td><td><a href="slides/exp/Exp3.html">网络数据爬取练习</a></td>
 										</tr>
 										<tr>
-											<td>6</td><td><a href="slides/4_Database.pptx">数据库基础及应用</a>，<a href=#>Python演示代码</a></td><td><a href=#>数据库练习</a>，<a href=#>示例代码</a></td>
+											<td>6</td><td><a href="slides/4_Database.pptx">数据库基础及应用</a>，<a href="slides/code/BDA_Ch4.html">Python演示代码</a></td><td><a href="#database_hw">数据库练习</a></td>
 										</tr>
 										<tr>
 											<td>7</td><td><a href=#>数据整理与可视化</a>，<a href=#>演示代码</a>、<a href=#>相关文件</a></td><td><a href=#>Python数据整理</a></td>
@@ -99,13 +99,17 @@
 							1）生成一个变量，判断酒店当天的现价是否高于同星级酒店当天的平均价格，高于则为1、否则为0</br>
 							2）绘制酒店价格和销量之间的关系图，并以星级为分类</br>
 							<br/><br/>
-							
-							<h2 id="database_hw">数据库实验题目：</h2>
-							利用课上所用的stu、course、enroll、zodiac四张表，使用python进行SQL查询和结果输出：</br>
-							1）找出所有属相为“龙”的学生及这些学生各自的最低分，最后结果展示学生姓名和最低分；</br>2）找出数据相关的课程（名字中含有“数据”这两个字）平均分最高的学生的姓名及该学生数据相关课程的平均分</br>
-							<a href="slides/exp/BDA_exp4.html"><b>(提示)</b></a>
-							<br/><br/>
 						-->	
+							<h2 id="database_hw">数据库实验题目：</h2>
+							将所抓取的天天基金网数据存入到MySQL数据库中（直接使用SQL或者使用Python均可），然后使用Python连接数据库并完成如下查询：<br/>
+							1）列出所有名字中带有“新能源”的基金<br/>
+							2）列出所有手续费大于0.1%的基金，并按照手续费从高到低排序<br/>
+							3）按照申购状态分组并展示每种状态的基金数<br/>
+							4）列出所有没有抓取历史净值的基金<br/>
+							5）对于抓取历史净值的基金，求每个基金近半年的涨幅（即所抓取历史净值的时间段），并取前十名展示<br/>
+							要求：对于每道题，尽量使用一条SQL完成查询；提交材料包括数据库表的创建代码或者页面截图，数据导入和查询的代码。
+							<br/><br/>
+							
 							<h2 id="projects">小组作业</h2>
 							抓取某个网站数据并进行分析，最后一次课进行课堂展示。要求：<br/>
 							1）可自由选择网站（天天基金网除外）<br/>
