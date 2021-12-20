@@ -8,13 +8,52 @@
     
 </head>
 <body>
-    <style>.box { justify-content:center; display:flex; flex-wrap:wrap;  }; </style>
+        <style>
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px 16px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .chart-container {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+    </style>
+    <div class="tab">
+            <button class="tablinks" onclick="showChart(event, 'f5a3a8406c5c46b8b2a2dc63149da333')">两队比分情况</button>
+            <button class="tablinks" onclick="showChart(event, '71a80253cf974e73985b35a603bd1375')">两队表现评级</button>
+            <button class="tablinks" onclick="showChart(event, 'ab96f16f5f6741dbb33bf9fe54f823df')">球队数据对比</button>
+            <button class="tablinks" onclick="showChart(event, 'd3c6d40de3e14181a95ba2211171d7a6')">球员数据榜单</button>
+            <button class="tablinks" onclick="showChart(event, '9df4366bbea64ab09ecab358150d7821')">洛杉矶湖里人队球员数据</button>
+            <button class="tablinks" onclick="showChart(event, 'c9b26b81292743539e69c4cd05a28a08')">乐不思北队球员数据</button>
+    </div>
+
     <div class="box">
-                <div id="0396af2aa3414a649c48adb032bc811e" class="chart-container" style="width:900px; height:500px;"></div>
+                <div id="f5a3a8406c5c46b8b2a2dc63149da333" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_0396af2aa3414a649c48adb032bc811e = echarts.init(
-            document.getElementById('0396af2aa3414a649c48adb032bc811e'), 'white', {renderer: 'canvas'});
-        var option_0396af2aa3414a649c48adb032bc811e = {
+        var chart_f5a3a8406c5c46b8b2a2dc63149da333 = echarts.init(
+            document.getElementById('f5a3a8406c5c46b8b2a2dc63149da333'), 'white', {renderer: 'canvas'});
+        var option_f5a3a8406c5c46b8b2a2dc63149da333 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -302,13 +341,13 @@
         }
     ]
 };
-        chart_0396af2aa3414a649c48adb032bc811e.setOption(option_0396af2aa3414a649c48adb032bc811e);
+        chart_f5a3a8406c5c46b8b2a2dc63149da333.setOption(option_f5a3a8406c5c46b8b2a2dc63149da333);
     </script>
-<br/>                <div id="62c843d3248242deb22c1a49d8555ed8" class="chart-container" style="width:900px; height:500px;"></div>
+                <div id="71a80253cf974e73985b35a603bd1375" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_62c843d3248242deb22c1a49d8555ed8 = echarts.init(
-            document.getElementById('62c843d3248242deb22c1a49d8555ed8'), 'white', {renderer: 'canvas'});
-        var option_62c843d3248242deb22c1a49d8555ed8 = {
+        var chart_71a80253cf974e73985b35a603bd1375 = echarts.init(
+            document.getElementById('71a80253cf974e73985b35a603bd1375'), 'white', {renderer: 'canvas'});
+        var option_71a80253cf974e73985b35a603bd1375 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -508,13 +547,13 @@
         }
     ]
 };
-        chart_62c843d3248242deb22c1a49d8555ed8.setOption(option_62c843d3248242deb22c1a49d8555ed8);
+        chart_71a80253cf974e73985b35a603bd1375.setOption(option_71a80253cf974e73985b35a603bd1375);
     </script>
-<br/>                <div id="c552aec52820447f9581f78309bb5963" class="chart-container" style="width:900px; height:500px;"></div>
+                <div id="ab96f16f5f6741dbb33bf9fe54f823df" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_c552aec52820447f9581f78309bb5963 = echarts.init(
-            document.getElementById('c552aec52820447f9581f78309bb5963'), 'white', {renderer: 'canvas'});
-        var option_c552aec52820447f9581f78309bb5963 = {
+        var chart_ab96f16f5f6741dbb33bf9fe54f823df = echarts.init(
+            document.getElementById('ab96f16f5f6741dbb33bf9fe54f823df'), 'white', {renderer: 'canvas'});
+        var option_ab96f16f5f6741dbb33bf9fe54f823df = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -1531,13 +1570,13 @@
         }
     ]
 };
-        chart_c552aec52820447f9581f78309bb5963.setOption(option_c552aec52820447f9581f78309bb5963);
+        chart_ab96f16f5f6741dbb33bf9fe54f823df.setOption(option_ab96f16f5f6741dbb33bf9fe54f823df);
     </script>
-<br/>                <div id="5c32e265eb104697b33952f0dc47d8c7" class="chart-container" style="width:900px; height:500px;"></div>
+                <div id="d3c6d40de3e14181a95ba2211171d7a6" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_5c32e265eb104697b33952f0dc47d8c7 = echarts.init(
-            document.getElementById('5c32e265eb104697b33952f0dc47d8c7'), 'white', {renderer: 'canvas'});
-        var option_5c32e265eb104697b33952f0dc47d8c7 = {
+        var chart_d3c6d40de3e14181a95ba2211171d7a6 = echarts.init(
+            document.getElementById('d3c6d40de3e14181a95ba2211171d7a6'), 'white', {renderer: 'canvas'});
+        var option_d3c6d40de3e14181a95ba2211171d7a6 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -2027,9 +2066,9 @@
         }
     ]
 };
-        chart_5c32e265eb104697b33952f0dc47d8c7.setOption(option_5c32e265eb104697b33952f0dc47d8c7);
+        chart_d3c6d40de3e14181a95ba2211171d7a6.setOption(option_d3c6d40de3e14181a95ba2211171d7a6);
     </script>
-<br/>                        <style>
+                        <style>
             .fl-table {
                 margin: 20px;
                 border-radius: 5px;
@@ -2081,10 +2120,10 @@
                 background: #F8F8F8;
             }
         </style>
-        <div id="394e5b6dfb094bf79ec21e051aaaa1f4" class="chart-container" style="">
+        <div id="9df4366bbea64ab09ecab358150d7821" class="chart-container" style="">
             <p class="title" style="font-size: 18px; font-weight:bold;" > 洛杉矶湖里人队</p>
             <p class="subtitle" style="font-size: 12px;" > </p>
-            <table class="fl-table">
+            <table width="75%" class="fl-table">
     <thead>
         <tr>
             <th>姓名</th>
@@ -2312,7 +2351,7 @@
 </table>
         </div>
 
-<br/>                        <style>
+                        <style>
             .fl-table {
                 margin: 20px;
                 border-radius: 5px;
@@ -2364,10 +2403,10 @@
                 background: #F8F8F8;
             }
         </style>
-        <div id="12f12d528d51430ba3a582864a260e5f" class="chart-container" style="">
+        <div id="c9b26b81292743539e69c4cd05a28a08" class="chart-container" style="">
             <p class="title" style="font-size: 18px; font-weight:bold;" > 乐不思北队</p>
             <p class="subtitle" style="font-size: 12px;" > </p>
-            <table class="fl-table">
+            <table width="75%" class="fl-table">
     <thead>
         <tr>
             <th>姓名</th>
@@ -2575,8 +2614,32 @@
 </table>
         </div>
 
-<br/>    </div>
+    </div>
+
     <script>
+    </script>
+    <script>
+        (function() {
+            containers = document.getElementsByClassName("chart-container");
+            if(containers.length > 0) {
+                containers[0].style.display = "block";
+            }
+        })()
+
+        function showChart(evt, chartID) {
+            let containers = document.getElementsByClassName("chart-container");
+            for (let i = 0; i < containers.length; i++) {
+                containers[i].style.display = "none";
+            }
+
+            let tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = "tablinks";
+            }
+
+            document.getElementById(chartID).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
     </script>
 </body>
 </html>
